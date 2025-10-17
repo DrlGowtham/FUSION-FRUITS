@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FreshFruit Mart — Fresh | Healthy | Local</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #fcfffb;
+      --card: #ffffff;
+      --accent: #2f9e44; /* fresh green */
+      --muted: #6b7280;
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 6px 18px rgba(16,24,40,0.08);
+      --radius: 14px;
+      --max-width: 1100px;
+      --accent-2: #ff7a59; /* peach */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, #f8fff9 0%, #ffffff 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:800;box-shadow:var(--shadow)}
+    .brand h1{margin:0;font-size:1.1rem}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:22px 0}
+    .intro h2{font-size:2rem;margin:0 0 10px}
+    .intro p{color:var(--muted);margin:0 0 18px}
+    .features{display:flex;gap:10px}
+    .pill{background:var(--card);padding:10px 12px;border-radius:999px;box-shadow:var(--shadow);font-weight:600}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));padding:18px;border-radius:18px;box-shadow:var(--shadow)}
+    .hero-card h3{margin:0 0 8px}
+    .hero-card p{margin:0;color:var(--muted)}
+
+    /* Product grid */
+    .section{padding:34px 0;border-top:1px dashed rgba(15,23,42,0.04)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center}
+    .thumb{width:74px;height:74px;border-radius:10px;flex-shrink:0;display:grid;place-items:center;font-weight:700;color:white}
+    .card h4{margin:0;font-size:1rem}
+    .card p{margin:6px 0 0;color:var(--muted);font-size:0.9rem}
+
+    /* Counters row */
+    .counters{display:flex;gap:14px}
+    .counter{flex:1;background:linear-gradient(180deg,#fff,#fcfffb);padding:18px;border-radius:12px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .service-item{background:linear-gradient(180deg,#fff,#fff);padding:16px;border-radius:12px;border:1px solid rgba(34,197,94,0.06)}
+
+    /* Footer */
+    footer{padding:26px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+      .container{padding:18px}
+      .brand h1{font-size:1rem}
+      .intro h2{font-size:1.5rem}
+      .counters{flex-direction:column}
+      .services{grid-template-columns:1fr}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{display:flex;align-items:center;justify-content:center}
+    .btn-outline{border:1px solid rgba(15,23,42,0.06);padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:700}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">FF</div>
+        <div>
+          <h1>FreshFruit Mart</h1>
+          <div class="muted" style="font-size:0.85rem">Farm-fresh fruits · Affordable prices</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#counters">Counters</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#order">Order App</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="intro">
+          <h2>Fresh fruits, made simple — from farm to your table</h2>
+          <p>We source premium, farm-fresh fruits directly from trusted local farmers — everyday staples to exotic varieties. Enjoy fresh juices, fruit ice creams, and healthy snacks at pocket-friendly prices.</p>
+          <div class="features">
+            <div class="pill">Home delivery</div>
+            <div class="pill">Curated hampers</div>
+            <div class="pill">Bulk orders</div>
+          </div>
+          <div style="margin-top:18px;display:flex;gap:12px">
+            <a class="cta" href="#order">Download App</a>
+            <a class="btn-outline" href="#products">Explore fruits</a>
+          </div>
+        </div>
+
+        <aside>
+          <div class="hero-card">
+            <h3>Why FreshFruit?</h3>
+            <p>Direct sourcing from farmers, strict freshness checks, and wide variety — from apples & bananas to dragon fruit and berries.</p>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <div class="pill">Locally sourced</div>
+              <div class="pill">Affordable</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:8px">
+            <div style="flex:1;background:linear-gradient(90deg,#fff,#fff);padding:12px;border-radius:12px;box-shadow:var(--shadow);text-align:center">
+              <div style="font-weight:800;font-size:1.3rem">4.9 ★</div>
+              <div class="muted">Customer rating</div>
+            </div>
+            <div style="flex:1;background:linear-gradient(90deg,#fff,#fff);padding:12px;border-radius:12px;box-shadow:var(--shadow);text-align:center">
+              <div style="font-weight:800;font-size:1.3rem">300+</div>
+              <div class="muted">Deliveries / day</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="products" class="section">
+        <h3>Popular Fruits</h3>
+        <p class="muted">Handpicked seasonal and premium fruits — hygienic packing, inspected for quality.</p>
+
+        <div class="grid" style="margin-top:14px">
+          <article class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#ffb86b,#ff7a59)">A</div>
+            <div>
+              <h4>Apples</h4>
+              <p class="muted">Crisp, sweet — great for snacking & salads</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#ffd86b,#ffb86b)">B</div>
+            <div>
+              <h4>Bananas</h4>
+              <p class="muted">Ripe, potassium-rich, economical</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">M</div>
+            <div>
+              <h4>Mangoes</h4>
+              <p class="muted">Seasonal King — pulpy, aromatic varieties</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">D</div>
+            <div>
+              <h4>Dragon Fruit</h4>
+              <p class="muted">Exotic, antioxidant-rich premium fruit</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#10b981,#34d399)">K</div>
+            <div>
+              <h4>Kiwi</h4>
+              <p class="muted">Tangy-sweet; vitamin C powerhouse</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb" style="background:linear-gradient(135deg,#ef4444,#f43f5e)">B</div>
+            <div>
+              <h4>Berries</h4>
+              <p class="muted">Strawberries, blueberries — perfect for bowls & desserts</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="counters" class="section">
+        <h3>In-store counters</h3>
+        <p class="muted">Freshly made on-site from our fruits — no added preservatives.</p>
+
+        <div class="counters" style="margin-top:12px">
+          <div class="counter">
+            <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#60a5fa,#3b82f6);display:grid;place-items:center;color:white;font-weight:800">J</div>
+            <div>
+              <h4>Fruit Juice Counter</h4>
+              <p class="muted">Cold-pressed juices, smoothies, seasonal specials</p>
+            </div>
+          </div>
+
+          <div class="counter">
+            <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#f97316,#fb923c);display:grid;place-items:center;color:white;font-weight:800">I</div>
+            <div>
+              <h4>Fruit Ice-cream Counter</h4>
+              <p class="muted">Creamy fruit sorbets & soft-serve options</p>
+            </div>
+          </div>
+
+          <div class="counter">
+            <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#bef264,#86efac);display:grid;place-items:center;color:white;font-weight:800">S</div>
+            <div>
+              <h4>Fruit Snacks Counter</h4>
+              <p class="muted">Dried fruits, fruit bites, healthy snack packs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <h3>Services</h3>
+        <p class="muted">Convenience-first services crafted for modern customers.</p>
+
+        <div class="services" style="margin-top:12px">
+          <div class="service-item">
+            <strong>Home delivery</strong>
+            <p class="muted" style="margin-top:6px">Same-day delivery in nearby areas — scheduled deliveries for corporate orders.</p>
+          </div>
+
+          <div class="service-item">
+            <strong>Curated Hampers</strong>
+            <p class="muted" style="margin-top:6px">Gift-ready fruit hampers with premium packaging — customizable for any occasion.</p>
+          </div>
+
+          <div class="service-item">
+            <strong>Bulk Orders</strong>
+            <p class="muted" style="margin-top:6px">Catering and event support — bulk pricing available for businesses and functions.</p>
+          </div>
+
+          <div class="service-item">
+            <strong>Quality Promise</strong>
+            <p class="muted" style="margin-top:6px">Every batch goes through quality checks — freshness guaranteed or your money back.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="order" class="section">
+        <h3>Order via our App</h3>
+        <p class="muted">We're building an easy-to-use mobile app for ordering fresh fruits, tracking deliveries, and managing subscriptions.</p>
+        <div style="display:flex;gap:12px;margin-top:12px">
+          <a class="cta" href="#">Coming soon — App Store</a>
+          <a class="btn-outline" href="#">Coming soon — Play Store</a>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h3>Contact & Location</h3>
+        <p class="muted">Visit our store or reach out for bulk orders and partnerships.</p>
+        <div style="display:flex;gap:18px;margin-top:12px;align-items:center">
+          <div style="flex:1;background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow)">
+            <strong>FreshFruit Mart (Main)</strong>
+            <div class="muted" style="margin-top:8px">123 Orchard Lane, Greenway Market, YourCity</div>
+            <div style="margin-top:8px">📞 +91 98765 43210</div>
+            <div style="margin-top:8px">✉️ hello@freshfruitmart.example</div>
+          </div>
+          <div style="width:320px;height:180px;border-radius:12px;background:linear-gradient(90deg,#eef2ff,#fdf2f8);display:grid;place-items:center;box-shadow:var(--shadow)">
+            <div class="muted">Map placeholder<br><small>Embed your map here</small></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© "FreshFruit Mart" — Supporting local farmers · Promoting healthy living</div>
+      <div class="muted">Designed for demo • Single-file HTML + CSS</div>
+    </footer>
+  </div>
+</body>
+</html>
